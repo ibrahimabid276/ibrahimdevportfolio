@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, MapPin, Mail, Phone } from "lucide-react";
+import { Send, MapPin, Mail } from "lucide-react";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -9,7 +9,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -27,7 +26,6 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -36,12 +34,11 @@ const Contact = () => {
           >
             <p className="text-muted-foreground leading-relaxed">
               I'm always open to discussing new projects, creative ideas, or opportunities
-              to be part of your vision. Feel free to reach out!
+              to collaborate on AI-powered applications. Feel free to reach out!
             </p>
             {[
-              { icon: Mail, text: "alex@example.com" },
-              { icon: Phone, text: "+1 (555) 123-4567" },
-              { icon: MapPin, text: "San Francisco, CA" },
+              { icon: Mail, text: "ibrahimabid276@gmail.com" },
+              { icon: MapPin, text: "Lahore, Pakistan" },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -52,7 +49,6 @@ const Contact = () => {
             ))}
           </motion.div>
 
-          {/* Form */}
           <motion.form
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}

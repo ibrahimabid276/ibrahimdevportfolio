@@ -4,34 +4,40 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Neural Style Transfer Engine",
-    desc: "Real-time artistic style transfer using deep CNNs with custom loss functions and GPU optimization.",
-    tags: ["PyTorch", "CUDA", "FastAPI", "Docker"],
+    title: "ColdMailAI",
+    desc: "An AI-powered tool that analyzes a target company's website, identifies key areas for improvement, and automatically drafts personalized, professional cold emails that get results.",
+    tags: ["Python", "CrewAI", "LLM", "Web Scraping"],
+    github: "https://github.com/ibrahimabid276/ColdMailAI",
   },
   {
-    title: "LLM-Powered Code Assistant",
-    desc: "Fine-tuned large language model for code generation and debugging with RAG-based context retrieval.",
-    tags: ["Transformers", "LangChain", "React", "Python"],
+    title: "AI Story Book Creator",
+    desc: "An AI-powered web app that generates personalized kids' stories based on user input like hero name, story type, power, and location. Built with Streamlit and CrewAI.",
+    tags: ["Python", "Streamlit", "CrewAI", "AI"],
+    github: "https://github.com/ibrahimabid276/My-Story-Book-Creator-Streamlit-",
   },
   {
-    title: "Predictive Analytics Dashboard",
-    desc: "End-to-end ML pipeline for time-series forecasting with interactive visualizations and automated retraining.",
-    tags: ["Scikit-learn", "Airflow", "D3.js", "AWS"],
+    title: "AI Fitness Planner",
+    desc: "An AI-powered fitness planner using CrewAI and Streamlit that generates personalized workout routines based on user input with multiple AI agents to create, review, and refine plans.",
+    tags: ["Python", "CrewAI", "Streamlit", "AI Agents"],
+    github: "https://github.com/ibrahimabid276/AI-Powered-Daily-Fitness-Planner-CrewAI-Streamlit-",
   },
   {
-    title: "Computer Vision Quality Inspector",
-    desc: "Automated defect detection system for manufacturing using YOLOv8 and edge deployment on Jetson.",
-    tags: ["YOLO", "TensorRT", "OpenCV", "IoT"],
+    title: "Smart Book Q&A (RAG)",
+    desc: "A RAG-based Q&A system that allows users to ask questions about books and get intelligent answers using retrieval-augmented generation with CrewAI.",
+    tags: ["Python", "CrewAI", "RAG", "NLP"],
+    github: "https://github.com/ibrahimabid276/Smart-Book-Q-A-Crew-CrewAI-RAG-Project-",
   },
   {
-    title: "NLP Sentiment Analyzer",
-    desc: "Multi-language sentiment analysis API processing 10K+ requests/min with transformer models.",
-    tags: ["BERT", "FastAPI", "Redis", "K8s"],
+    title: "Wolf Hunt Treasure Chase",
+    desc: "Step into the paws of a clever wolf on a fast-paced treasure hunt! Collect coins and apples scattered across the forest while racing against time.",
+    tags: ["Python", "Pygame", "Game Dev"],
+    github: "https://github.com/ibrahimabid276/-Wolf-Hunt-Treasure-Chase",
   },
   {
-    title: "Recommendation Engine",
-    desc: "Collaborative filtering system serving personalized recommendations to 1M+ users in real-time.",
-    tags: ["TensorFlow", "Spark", "Neo4j", "GCP"],
+    title: "CrewAI Fitness Planner",
+    desc: "A CrewAI-based fitness planner that generates daily workout plans with warm-up, recovery, and safety review using multi-agent collaboration.",
+    tags: ["Python", "CrewAI", "AI Agents"],
+    github: "https://github.com/ibrahimabid276/CrewAI-Fitness-Planner",
   },
 ];
 
@@ -76,11 +82,13 @@ const Projects = () => {
                 ))}
               </div>
               <div className="flex gap-3">
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   <Github size={18} />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <ExternalLink size={18} />
                 </a>
               </div>
             </motion.div>
