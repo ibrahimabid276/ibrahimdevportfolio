@@ -1,13 +1,12 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Brain, Code, Database, Lightbulb } from "lucide-react";
 
 const highlights = [
-  { icon: Brain, label: "Machine Learning", desc: "Deep learning & neural networks" },
-  { icon: Code, label: "Full-Stack Dev", desc: "React, Python, TypeScript" },
-  { icon: Database, label: "Data Engineering", desc: "Scalable data pipelines" },
-  { icon: Lightbulb, label: "Problem Solving", desc: "Research & innovation" },
+  { icon: Brain, label: "AI & CrewAI", desc: "Multi-agent AI systems" },
+  { icon: Code, label: "Python Developer", desc: "Streamlit, FastAPI, Flask" },
+  { icon: Database, label: "RAG Systems", desc: "Retrieval-augmented generation" },
+  { icon: Lightbulb, label: "Problem Solver", desc: "Creative AI solutions" },
 ];
 
 const About = () => {
@@ -35,18 +34,18 @@ const About = () => {
             className="space-y-4"
           >
             <p className="text-muted-foreground leading-relaxed">
-              I'm a passionate AI/ML Engineer with 5+ years of experience building
-              intelligent systems. My expertise spans from deep learning research to
-              production-grade machine learning pipelines.
+              I'm Syed Ibrahim, an AI/ML enthusiast and Python developer based in Lahore.
+              I specialize in building intelligent applications using CrewAI, Streamlit, and
+              modern AI frameworks.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Currently focused on large language models, computer vision, and MLOps.
-              I enjoy turning complex problems into elegant, scalable solutions that
-              make a real-world impact.
+              My work ranges from AI-powered cold email generators and fitness planners to
+              interactive story book creators and RAG-based Q&A systems. I love exploring
+              how multi-agent AI can solve real-world problems.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              When I'm not coding, you'll find me reading research papers, contributing
-              to open source, or exploring the latest in AI ethics and safety.
+              I'm always learning and building — whether it's experimenting with new AI models,
+              creating fun Python games, or contributing to open-source projects on GitHub.
             </p>
           </motion.div>
 
