@@ -94,7 +94,7 @@ const Hero = () => {
               alt="Syed Ibrahim - AI/ML Engineer"
               width={512}
               height={512}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[center_20%]"
             />
           </div>
 
