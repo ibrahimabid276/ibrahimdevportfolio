@@ -65,6 +65,18 @@
   html {
     scroll-behavior: smooth;
   }
+
+  .cursor-none,
+  .cursor-none * {
+    cursor: none !important;
+  }
+
+  @media (pointer: coarse) {
+    .cursor-none,
+    .cursor-none * {
+      cursor: auto !important;
+    }
+  }
 }
 
 @layer utilities {
