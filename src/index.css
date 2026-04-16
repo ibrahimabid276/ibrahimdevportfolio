@@ -128,3 +128,13 @@
   0%, 100% { opacity: 0.5; }
   50% { opacity: 1; }
 }
+
+@keyframes cursorPulse {
+  0%, 100% { filter: drop-shadow(0 0 8px #4ade80) drop-shadow(0 0 20px #4ade8060); }
+  50% { filter: drop-shadow(0 0 16px #4ade80) drop-shadow(0 0 40px #4ade80a0); }
+}
+
+@keyframes cursorRipple {
+  0% { width: 0; height: 0; opacity: 0.8; }
+  100% { width: 80px; height: 80px; opacity: 0; }
+}
