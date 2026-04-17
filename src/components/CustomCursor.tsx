@@ -8,9 +8,10 @@ interface Ripple {
 }
 
 const CustomCursor = () => {
+  const isCoarse = typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
   const [pos, setPos] = useState({ x: -100, y: -100 });
   const [hovering, setHovering] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(!isCoarse);
   const [ripples, setRipples] = useState<Ripple[]>([]);
   const rippleId = useRef(0);
 
@@ -23,7 +24,11 @@ const CustomCursor = () => {
   }, []);
 
   useEffect(() => {
-    if (window.matchMedia("(pointer: coarse)").matches) return;
+    if (isCoarse) return;
+
+    // Hide native cursor immediately
+    document.documentElement.style.cursor = "none";
+    document.body.style.cursor = "none";
 
     const move = (e: MouseEvent) => {
       setPos({ x: e.clientX, y: e.clientY });
@@ -53,10 +58,12 @@ const CustomCursor = () => {
       window.removeEventListener("mousemove", move);
       window.removeEventListener("click", handleClick);
       observer.disconnect();
+      document.documentElement.style.cursor = "";
+      document.body.style.cursor = "";
     };
-  }, [handleClick]);
+  }, [handleClick, isCoarse]);
 
-  if (!visible) return null;
+  if (isCoarse) return null;
 
   const scale = hovering ? 1.2 : 1;
   const size = 36;

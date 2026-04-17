@@ -1,15 +1,38 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, MapPin, Mail } from "lucide-react";
+import { Send, MapPin, Mail, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormData({ name: "", email: "", message: "" });
+    if (submitting) return;
+    setSubmitting(true);
+    try {
+      const { error } = await supabase.from("contact_messages").insert({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        message: formData.message.trim(),
+      });
+      if (error) throw error;
+      toast.success("Message sent!", {
+        description: "Thanks for reaching out — Ibrahim will get back to you soon.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error("Contact submit error:", err);
+      toast.error("Couldn't send message", {
+        description: "Please try again, or email ibrahimabid276@gmail.com directly.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -91,9 +114,14 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="w-full py-3 rounded-lg bg-primary text-primary-foreground font-medium flex items-center justify-center gap-2 hover:shadow-[0_0_30px_hsl(142_71%_45%/0.3)] transition-all duration-300"
+              disabled={submitting}
+              className="w-full py-3 rounded-lg bg-primary text-primary-foreground font-medium flex items-center justify-center gap-2 hover:shadow-[0_0_30px_hsl(142_71%_45%/0.3)] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Send Message <Send size={16} />
+              {submitting ? (
+                <>Sending <Loader2 size={16} className="animate-spin" /></>
+              ) : (
+                <>Send Message <Send size={16} /></>
+              )}
             </button>
           </motion.form>
         </div>
