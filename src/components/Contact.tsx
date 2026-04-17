@@ -114,9 +114,14 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="w-full py-3 rounded-lg bg-primary text-primary-foreground font-medium flex items-center justify-center gap-2 hover:shadow-[0_0_30px_hsl(142_71%_45%/0.3)] transition-all duration-300"
+              disabled={submitting}
+              className="w-full py-3 rounded-lg bg-primary text-primary-foreground font-medium flex items-center justify-center gap-2 hover:shadow-[0_0_30px_hsl(142_71%_45%/0.3)] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Send Message <Send size={16} />
+              {submitting ? (
+                <>Sending <Loader2 size={16} className="animate-spin" /></>
+              ) : (
+                <>Send Message <Send size={16} /></>
+              )}
             </button>
           </motion.form>
         </div>
