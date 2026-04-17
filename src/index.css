@@ -130,8 +130,8 @@
 }
 
 @keyframes cursorPulse {
-  0%, 100% { filter: drop-shadow(0 0 8px #4ade80) drop-shadow(0 0 20px #4ade8060); }
-  50% { filter: drop-shadow(0 0 16px #4ade80) drop-shadow(0 0 40px #4ade80a0); }
+  0%, 100% { filter: drop-shadow(0 0 4px #4ade80) drop-shadow(0 0 10px #22d3ee) drop-shadow(0 0 18px #4ade8080); }
+  50% { filter: drop-shadow(0 0 8px #4ade80) drop-shadow(0 0 18px #22d3ee) drop-shadow(0 0 32px #4ade80c0); }
 }
 
 @keyframes cursorRipple {
