@@ -59,9 +59,9 @@ const Skills = () => {
           {skillCategories.map((cat, ci) => (
             <motion.div
               key={cat.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.15 + ci * 0.15, duration: 0.6 }}
+              initial={{ opacity: 0, x: ci % 2 === 0 ? -80 : 80 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.15 + ci * 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="glass rounded-2xl p-6 neon-border hover:bg-card/80 transition-all duration-500"
             >
               <div className="flex items-center gap-3 mb-5">
