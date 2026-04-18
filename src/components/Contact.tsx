@@ -50,9 +50,9 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            initial={{ opacity: 0, y: 60, filter: "blur(12px)" }}
+            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-6"
           >
             <p className="text-muted-foreground leading-relaxed">
@@ -73,9 +73,9 @@ const Contact = () => {
           </motion.div>
 
           <motion.form
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            initial={{ opacity: 0, y: 60, filter: "blur(12px)" }}
+            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            transition={{ delay: 0.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             onSubmit={handleSubmit}
             className="glass rounded-xl p-6 neon-border space-y-5"
           >
