@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import CustomCursor from "@/components/CustomCursor";
 import AIChatBubble from "@/components/AIChatBubble";
+import BackToTop from "@/components/BackToTop";
 import Loader from "@/components/Loader";
 
 const Index = () => (
@@ -23,6 +24,7 @@ const Index = () => (
     <Contact />
     <Footer />
     <AIChatBubble />
+    <BackToTop />
   </div>
 );
 
