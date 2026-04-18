@@ -79,13 +79,13 @@ const Projects = () => {
             <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5" style={{ perspective: "1200px" }}>
             {projects.map((p, i) => (
               <motion.div
                 key={p.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
+                initial={{ opacity: 0, rotateY: -45, y: 40 }}
+                animate={isInView ? { opacity: 1, rotateY: 0, y: 0 } : {}}
+                transition={{ delay: i * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 className="glass rounded-2xl p-6 group hover:shadow-[0_0_40px_hsl(142_71%_45%/0.15)] hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 flex flex-col"
               >
                 <h3 className="text-lg font-semibold mb-2 group-hover:neon-text transition-all duration-300">

@@ -27,11 +27,11 @@ const About = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left: Text */}
+          {/* Left: Text — scale + fade */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="space-y-5"
           >
             <p className="text-muted-foreground leading-relaxed text-base">
@@ -48,14 +48,14 @@ const About = () => {
             </p>
           </motion.div>
 
-          {/* Right: 2x2 highlights */}
+          {/* Right: 2x2 highlights — pop in with rotation */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {highlights.map(({ icon: Icon, label, desc }, i) => (
               <motion.div
                 key={label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
+                initial={{ opacity: 0, scale: 0.5, rotate: -8 }}
+                animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+                transition={{ delay: 0.25 + i * 0.12, duration: 0.6, type: "spring", stiffness: 120 }}
                 className="glass rounded-2xl p-6 neon-border hover:bg-card/80 transition-all duration-500 group"
               >
                 <Icon
