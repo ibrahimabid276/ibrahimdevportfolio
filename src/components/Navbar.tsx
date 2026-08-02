@@ -43,6 +43,12 @@ const Navbar = () => {
           >
             Hire Me
           </a>
+          <div
+            className="contra-hire-me-button"
+            data-analyticsUserId="71859a09-3133-43fc-8f87-f9cf9c8e1f77"
+            data-theme="dark"
+            data-username="ibrahim_abid_mkff1idd"
+          />
         </div>
 
         <button
@@ -69,6 +75,12 @@ const Navbar = () => {
               {item}
             </a>
           ))}
+          <div
+            className="contra-hire-me-button"
+            data-analyticsUserId="71859a09-3133-43fc-8f87-f9cf9c8e1f77"
+            data-theme="dark"
+            data-username="ibrahim_abid_mkff1idd"
+          />
         </motion.div>
       )}
     </motion.nav>
